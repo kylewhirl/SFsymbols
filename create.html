@@ -50,7 +50,10 @@ body {
 
 </body>
 <script>
-   import java.util.Base64;
+   
+      
+import java.io.ByteArrayInputStream;
+import sun.misc.BASE64Decoder;
    
 const urlParams = new URLSearchParams(window.location.search);
 var myParam = urlParams.get('path');
@@ -72,7 +75,26 @@ var client = newXMLHttpRequest();
 client.send();
 var json = JSON.parse(client);
 var icon = rep.replace(".png", "");
-var image = decode(json.icon);
 document.write(json.icon);
+
+def sourceData = 'data:image/png;base64,' + json.icon;
+
+// tokenize the data
+def parts = sourceData.tokenize(",");
+def imageString = parts[1];
+
+// create a buffered image
+BufferedImage image = null;
+byte[] imageByte;
+
+BASE64Decoder decoder = new BASE64Decoder();
+imageByte = decoder.decodeBuffer(imageString);
+ByteArrayInputStream bis = new ByteArrayInputStream(imageByte);
+image = ImageIO.read(bis);
+bis.close();
+
+// write the image to a file
+File outputfile = new File("image.png");
+ImageIO.write(image, "png", outputfile);
 </script>
 </html>
