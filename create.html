@@ -18,7 +18,7 @@ body {
   transform: translate(-50%, -50%);
 }
 .div {
-  background:url("") no-repeat scroll 0 0 transparent;
+  background: url("") no-repeat scroll 0 0 transparent;
   background-size: 200px;
   width: 200px;
   height: 200px;
@@ -59,6 +59,6 @@ function getImageDirectoryByFullURL(url){
 var string = getImageDirectoryByFullURL(window.location.search);
 var rep = string.replace("?path=","");
 var url = "url(Symbols\\ + rep + )";
-document.div.style.background = url;
+document.getElementById("a").style.background = url;
 </script>
 </html>
