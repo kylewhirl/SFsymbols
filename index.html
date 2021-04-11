@@ -19,6 +19,7 @@ $(function() {
         var source = $('img[src*="' + s + '"]');
         $('img[alt*="' + s + '"]').css("display","inline");
         $('img[alt="abc"]').attr("src", source);
+        $(':not(:contains('+ s +'))').css("display", "none"); 
     });
 });
 </script>
