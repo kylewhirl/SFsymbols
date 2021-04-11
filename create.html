@@ -56,8 +56,8 @@ function getImageDirectoryByFullURL(url){
     return url.substr(url.lastIndexOf("/")+1);
 }
 var string = getImageDirectoryByFullURL(window.location.search);
-var rep = string.replace("script%3E?path=","");
-var url = "url(&quot;Symbols\\" + rep + "&quot;)";
+var rep = string.replace("?path=","");
+var url = "url(Symbols\\ + rep + )";
 document.getElementById("a").style.background = url;
 </script>
 <style>
