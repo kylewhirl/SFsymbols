@@ -16,8 +16,6 @@ $(function() {
         var s = $(this).val();
         var results = $('img[alt*="' + s + '"],img[src*="' + s + '"]');
         var output = $('<div></div>').append(results.clone());
-        var imgElement = document.querySelector('img[alt*="' + s + '"]');
-        imgElement.style.visibility = 'visible';
         $('#results').text(output.html());
     });
 });
@@ -27,6 +25,6 @@ $(function() {
 <img alt="abc" src="Symbols/0.circle.png" />
 <img alt="bcd" src="efg.png" />
 <input id="search" type="text" placeholder="Search" />
-<div id="results"></div>​
+<div id="results"></div>
 </body>
 </html>
