@@ -16,6 +16,8 @@ $(function() {
         var s = $(this).val();
         var results = $('img[alt*="' + s + '"],img[src*="' + s + '"]');
         var output = $('<div></div>').append(results.clone());
+        var imgElement = document.querySelector('img[alt*="' + s + '"]');
+        imgElement.style.visibility = 'visible';
         $('#results').text(output.html());
     });
 });
