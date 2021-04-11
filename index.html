@@ -45,7 +45,7 @@ $(document).ready(function () {
             } else {
                 $(this).show();
                 var alt = $(this).attr('alt');
-                var url = 'https://kylewhirl.com/SFsymbols/create.html?' + alt ;
+                var url = 'https://kylewhirl.com/SFsymbols/create.html?path=' + alt ;
                 $("img").wrap($("<a>").attr("href", url));
             }
         });
