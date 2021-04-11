@@ -20,6 +20,7 @@ $(function() {
         var source = $('img[src*="' + s + '"]');
         $('img[alt="abc"]').attr("src",'src*="' + s + '"');
         $('img[alt="abc"]').attr("src", source);
+        $("img").css("display", "inline");
     });
 });
 </script>
