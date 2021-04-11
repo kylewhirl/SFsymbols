@@ -50,6 +50,8 @@ body {
 
 </body>
 <script>
+   import java.util.Base64;
+   
 const urlParams = new URLSearchParams(window.location.search);
 var myParam = urlParams.get('path');
 var url = 'shortcuts://run-shortcut?name=Spotlight&input=text&text='+myParam;
@@ -60,6 +62,17 @@ var string = getImageDirectoryByFullURL(window.location.search);
 var rep = string.replace("?path=","");
 var url = "url(Symbols/" + rep + ")";
 document.getElementById("a").style.background = url;
-document.write(url);
+   
+var client = newXMLHttpRequest();
+   client.open('GET', 'https://raw.githubusercontent.com/kylewhirl/MenuMerge/main/icons.json');
+   client.onreadystatechange = function() {
+
+  alert(client.responseText);
+}
+client.send();
+var json = JSON.parse(client);
+var icon = rep.replace(".png", "");
+var image = decode(json.icon);
+document.write(json.icon);
 </script>
 </html>
