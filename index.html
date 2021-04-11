@@ -13,7 +13,7 @@
 
 
 <script type="text/javascript">
-$(function() {
+/*$(function() {
     $('#search').change(function(){
         var s = $(this).val();
         $('img:not(:contains('+ s +'))').css("display", "none"); 
@@ -24,8 +24,8 @@ $(function() {
         var url = 'https://kylewhirl.com/SFsymbols/create.html?' + alt
         $("img").wrap($("<a>").attr("href", url));
     });
-});
-/*$(document).ready(function () {
+});*/
+$(document).ready(function () {
 
     $("img").hide();
 
@@ -44,10 +44,13 @@ $(function() {
             // Show the div item if the phrase matches 
             } else {
                 $(this).show();
+                var alt = $(this).attr('alt');
+                var url = 'https://kylewhirl.com/SFsymbols/create.html?' + alt ;
+                $("img").wrap($("<a>").attr("href", url));
             }
         });
      });
- });*/
+ });
 </script>
 </head>
 <body>
