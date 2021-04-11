@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+var myParam = urlParams.get('path');
+var url = 'shortcuts://run-shortcut?name=Spotlight&input=text&text='+myParam;
+function getImageDirectoryByFullURL(url){
+    return url.substr(url.lastIndexOf("/")+1);
+}
+var string = getImageDirectoryByFullURL(window.location.search);
+var rep = string.replace("script%3E?path=","");
+document.getElementById("div").style.background = "url('Symbols/" + rep + "')"
+</script>
+<style>
+body {
+   background-color: InDict (bg color)
+}
+.container { 
+  height: 200px;
+  position: relative;
+}
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.div {
+  background:url("") no-repeat scroll 0 0 transparent;
+  background-size:Calculation Resultpx;
+  width:Calculation Resultpx;
+  height:Calculation Resultpx;
+  -webkit-filter: url(#colorize);
+  filter: url(#colorize);
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="center">
+   <div class="div">
+    </div>
+  </div>
+</div>
+
+<svg>
+<defs>
+<filter id="colorize" color-interpolation-filters="sRGB">
+<feColorMatrix type="matrix" values="0 0 0 0 r
+                                 0 0 0 0 g
+                                 0 0 0 0 b
+                                 0 0 0 1 0"/>
+ 
+/filter>
+</defs>
+</svg>
+
+</body>
+</html>
