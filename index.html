@@ -16,12 +16,35 @@
 $(function() {
     $('#search').change(function(){
         var s = $(this).val();
+        $('img:not(:contains('+ s +'))').css("display", "none"); 
         var source = $('img[src*="' + s + '"]');
         $('img[alt*="' + s + '"]').css("display","inline");
         $('img[alt="abc"]').attr("src", source);
-        $('img[alt]:not(:contains('+ s +'))').css("display", "none"); 
     });
 });
+/*$(document).ready(function () {
+
+    $("img").hide();
+
+    $("#searchfor").keyup(function(){
+
+        // Retrieve the input field text 
+        var filter = $(this).val();
+
+        // Loop through the captions div 
+        $("img").each(function(){
+
+            // If the div item does not contain the text phrase fade it out
+            if ($(this).attr('alt').search(new RegExp(filter, "i")) < 0) {
+                $(this).fadeOut();
+
+            // Show the div item if the phrase matches 
+            } else {
+                $(this).show();
+            }
+        });
+     });
+ });*/
 </script>
 </head>
 <body>
