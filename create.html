@@ -3,7 +3,7 @@
 <head>
 <style>
 body {
-   background-color: InDict (bg color)
+   background-color: #ffffff
 }
 .container { 
   height: 200px;
@@ -19,9 +19,9 @@ body {
 }
 .div {
   background:url("") no-repeat scroll 0 0 transparent;
-  background-size:Calculation Resultpx;
-  width:Calculation Resultpx;
-  height:Calculation Resultpx;
+  background-size: 200px;
+  width: 200px;
+  height: 200px;
   -webkit-filter: url(#colorize);
   filter: url(#colorize);
 }
@@ -59,6 +59,6 @@ function getImageDirectoryByFullURL(url){
 var string = getImageDirectoryByFullURL(window.location.search);
 var rep = string.replace("?path=","");
 var url = "url(Symbols\\ + rep + )";
-document.getElementById("a").style.background = url;
+document.div.style.background = url;
 </script>
 </html>
