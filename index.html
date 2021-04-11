@@ -4,28 +4,21 @@
     <title>Search images</title>
 
 <script type="text/javascript">
-var folder = "Symbols/";
-var img = new Image();
-img.src = path_to_image;
-
-img.onerror = function() {
-  // any logic in case of error
-};
-
-img.onload = function() {
-  document.body.appendChild(img);
-}; 
+$(function() {
+    $('#search').change(function(){
+        var s = $(this).val();
+        var results = $('img[alt*="' + s + '"],img[src*="' + s + '"]');
+        var output = $('<div></div>').append(results.clone());
+        $('#results').text(output.html());
+    });
+});
 </script>
 </head>
 <body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<form>
-<label>Search for image:</label>
-<br />
-<input type="text" name="search" placeholder="">
-<button type="submit">Search</button>
-<br />
-<!-- Image result should appear here -->
-</form>
+<img alt="abc" src="Symbols/0.circle" />
+<img alt="bcd" src="efg.png" />
+<input id="search" type="text" placeholder="Search" />
+<div id="results"></div>​
 </body>
 </html>
