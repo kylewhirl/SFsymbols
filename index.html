@@ -20,7 +20,7 @@ $(function() {
         var source = $('img[src*="' + s + '"]');
         $('img[alt*="' + s + '"]').css("display","inline");
         $('img[alt="abc"]').attr("src", source);
-        var url = 'https://kylewhirl.com/SFsymbols/create.html?' + source
+        var url = 'https://kylewhirl.com/SFsymbols/create.html?' + this.alt
         $("img").wrap($("<a>").attr("href", url));
     });
 });
