@@ -1,19 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-const urlParams = new URLSearchParams(window.location.search);
-var myParam = urlParams.get('path');
-var url = 'shortcuts://run-shortcut?name=Spotlight&input=text&text='+myParam;
-function getImageDirectoryByFullURL(url){
-    return url.substr(url.lastIndexOf("/")+1);
-}
-var string = getImageDirectoryByFullURL(window.location.search);
-var rep = string.replace("script%3E?path=","");
-var url = "url(&quot;Symbols\\" + rep + "&quot;)";
-document.getElementById("a").style.background = url;
-</script>
-<style>
 body {
    background-color: InDict (bg color)
 }
@@ -61,4 +48,17 @@ body {
 </svg>
 
 </body>
+<script>
+const urlParams = new URLSearchParams(window.location.search);
+var myParam = urlParams.get('path');
+var url = 'shortcuts://run-shortcut?name=Spotlight&input=text&text='+myParam;
+function getImageDirectoryByFullURL(url){
+    return url.substr(url.lastIndexOf("/")+1);
+}
+var string = getImageDirectoryByFullURL(window.location.search);
+var rep = string.replace("script%3E?path=","");
+var url = "url(&quot;Symbols\\" + rep + "&quot;)";
+document.getElementById("a").style.background = url;
+</script>
+<style>
 </html>
