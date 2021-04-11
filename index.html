@@ -4,7 +4,7 @@
     <title>Search images</title>
 <style>
     img {
-        visibility: hidden;
+        display: none;
     }
 </style>
     
@@ -18,8 +18,8 @@ $(function() {
         var output = $('<div></div>').append(results.clone());
         $('#results').text(output.html());
         var source = $('img[src*="' + s + '"]');
-        $('img[alt="Myimage"]').attr("src",'src*="' + s + '"');
-        $('img[alt="Myimage"]').attr("src", source);
+        $('img[alt="abc"]').attr("src",'src*="' + s + '"');
+        $('img[alt="abc"]').attr("src", source);
     });
 });
 </script>
