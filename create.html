@@ -10,7 +10,8 @@ function getImageDirectoryByFullURL(url){
 }
 var string = getImageDirectoryByFullURL(window.location.search);
 var rep = string.replace("script%3E?path=","");
-document.getElementById("div").style.background = "url('Symbols/" + rep + "')"
+var url = "url(&quot;Symbols\\" + rep + "&quot;)";
+document.getElementById("a").style.background = url;
 </script>
 <style>
 body {
