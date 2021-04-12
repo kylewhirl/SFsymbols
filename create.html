@@ -66,7 +66,7 @@ document.getElementById("a").style.background = url;
 var icon = rep.replace(".png", "");
    
 $.getJSON('https://raw.githubusercontent.com/kylewhirl/MenuMerge/main/icons.json', function(data) {
-   alert(data.icon);
+   document.write(data[icon]);
     // JSON result in `data` variable
 });
 document.write(data.icon);
