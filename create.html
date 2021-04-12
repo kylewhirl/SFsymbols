@@ -58,12 +58,12 @@ body {
 
    <script>
       function changeBackground(){
-         let color = document.getElementbyId('colorText').value;
-         document.body.style.bakcgroundColor = color;
+         let color = document.getElementById('colorText').value;
+         document.body.style.backgroundColor = color;
          document.getElementById('colorText').value = color;
       }
    function changeIcon(){
-         let colorIcon = document.getElementbyId('colorTextIcon').value;
+         let colorIcon = document.getElementById('colorTextIcon').value;
          document.getElementById('colorize').attr('values') = "1";
          document.getElementById('colorTextIcon').value = colorIcon;
       }
