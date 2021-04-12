@@ -30,6 +30,12 @@ body {
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
+   <input type="text" id="colorText">
+   <input type="color" id="colorInput">
+   <input type="button" id="colorButton" value="Click to Change Background Color" onclick="changeBackground()">
+   <input type="text" id="colorTextIcon">
+   <input type="color" id="colorInputIcon">
+   <input type="button" id="colorButtonIcon" value="Click to Change Icon Color" onclick="changeBackground()">
    <canvas id="myCanvas" width="200" height="200"></canvas>
 <div class="container">
   <div class="center">
@@ -52,7 +58,19 @@ body {
 
 </body>
    <script>
-   
+      function changeBackground(){
+         let color = document.getElementbyId('colorText').value;
+         document.body.style.bakcgroundColor = color;
+         document.getElementById('colorText').value = color;
+      }
+   function changeIcon(){
+         let colorIcon = document.getElementbyId('colorTextIcon').value;
+         document.getElementById('colorize').attr('values') = "0 0 0 0 .1
+                                 0 0 0 0 .7
+                                 0 0 0 0 .7
+                                 0 0 0 1 0";
+         document.getElementById('colorTextIcon').value = colorIcon;
+      }
 const urlParams = new URLSearchParams(window.location.search);
 var myParam = urlParams.get('path');
 var url = 'shortcuts://run-shortcut?name=Spotlight&input=text&text='+myParam;
