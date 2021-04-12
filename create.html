@@ -56,7 +56,6 @@ body {
 </defs>
 </svg>
 
-</body>
    <script>
       function changeBackground(){
          let color = document.getElementbyId('colorText').value;
@@ -68,6 +67,12 @@ body {
          document.getElementById('colorize').attr('values') = "1";
          document.getElementById('colorTextIcon').value = colorIcon;
       }
+   </script>
+   
+   
+</body>
+   <script>
+   
 const urlParams = new URLSearchParams(window.location.search);
 var myParam = urlParams.get('path');
 var url = 'shortcuts://run-shortcut?name=Spotlight&input=text&text='+myParam;
