@@ -30,6 +30,7 @@ body {
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
+   <canvas id="myCanvas" width="200" height="200"></canvas>
 <div class="container">
   <div class="center">
    <div id="a" class="div">
@@ -65,22 +66,18 @@ $.getJSON('https://raw.githubusercontent.com/kylewhirl/MenuMerge/main/icons.json
    var base64 = data[icon];
 var url = "url(\"data:image/png;base64," + base64 + "\")";
 document.getElementById("a").style.background = url;
-function getBase64Image(img) {
-  var canvas = document.createElement("canvas");
-  canvas.width = img.width;
-  canvas.height = img.height;
-  var ctx = canvas.getContext("2d");
-  var img2 = new Image();
-   img2.onload = function() {
-       ctx.drawImage(img2, 0, 0);
-   }
-   img2.src = img;
-  var dataURL = canvas.toDataURL("image/png");
-  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
-}
-
-var base64 = getBase64Image(document.getElementById("colorize"));
 });
-
+   window.onload = function() {  
+    var myCanvas = document.getElementById('myCanvas');
+    var myCanvasContext = myCanvas.getContext('2d');
+    var source = new Image();
+    var img = document.getElementById('colorize');
+    source.onload = function() {
+     myCanvasContext.drawImage(source,0,0,200,200);
+     document.getElementById('output').src = myCanvas.toDataURL("image/png");
+     console.log(myCanvas.toDataURL("image/png"));
+    }     
+    source.src = 'data:image/svg+xml;base64,'+btoa(img.outerHTML);
+   }
 </script>
 </html>
