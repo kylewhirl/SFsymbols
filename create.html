@@ -67,7 +67,19 @@ var url = "url(\"data:image/png;base64," + base64 + "\")";
 document.getElementById("a").style.background = url;
 
 });
+var mySVG    = document.querySelector('…'),      // Inline SVG element
+    tgtImage = document.querySelector('…'),      // Where to draw the result
+    can      = document.createElement('canvas'), // Not shown on page
+    ctx      = can.getContext('2d'),
+    loader   = new Image;                        // Not shown on page
 
-   document.write(icon);
+loader.width  = can.width  = tgtImage.width;
+loader.height = can.height = tgtImage.height;
+loader.onload = function(){
+  ctx.drawImage( loader, 0, 0, loader.width, loader.height );
+  tgtImage.src = can.toDataURL();
+};
+var svgAsXML = (new XMLSerializer).serializeToString( mySVG );
+loader.src = 'data:image/svg+xml,' + encodeURIComponent( svgAsXML );
 </script>
 </html>
