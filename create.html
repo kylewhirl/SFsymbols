@@ -67,19 +67,16 @@ var url = "url(\"data:image/png;base64," + base64 + "\")";
 document.getElementById("a").style.background = url;
 
 });
-var mySVG    = document.querySelector('…'),      // Inline SVG element
-    tgtImage = document.querySelector('…'),      // Where to draw the result
-    can      = document.createElement('canvas'), // Not shown on page
-    ctx      = can.getContext('2d'),
-    loader   = new Image;                        // Not shown on page
+function getBase64Image(img) {
+  var canvas = document.createElement("canvas");
+  canvas.width = img.width;
+  canvas.height = img.height;
+  var ctx = canvas.getContext("2d");
+  ctx.drawImage(img, 0, 0);
+  var dataURL = canvas.toDataURL("image/png");
+  return dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
+}
 
-loader.width  = can.width  = tgtImage.width;
-loader.height = can.height = tgtImage.height;
-loader.onload = function(){
-  ctx.drawImage( loader, 0, 0, loader.width, loader.height );
-  tgtImage.src = can.toDataURL();
-};
-var svgAsXML = (new XMLSerializer).serializeToString( mySVG );
-loader.src = 'data:image/svg+xml,' + encodeURIComponent( svgAsXML );
+var base64 = getBase64Image(document.getElementById("colorize"));
 </script>
 </html>
