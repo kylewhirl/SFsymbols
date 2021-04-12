@@ -63,7 +63,7 @@ var rep = string.replace("?path=","");
 var url = "url(Symbols/" + rep + ")";
 document.getElementById("a").style.background = url;
    
-var json = $.getJSON('http://query.yahooapis.com/v1/public/yql?q=select%20%2a%20from%20yahoo.finance.quotes%20WHERE%20symbol%3D%27WRC%27&format=json&diagnostics=true&env=store://datatables.org/alltableswithkeys&callback', function(data) {
+var json = $.getJSON('https://raw.githubusercontent.com/kylewhirl/MenuMerge/main/icons.json', function(data) {
     // JSON result in `data` variable
 });
 var json = JSON.parse(client);
