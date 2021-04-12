@@ -63,11 +63,11 @@ var rep = string.replace("?path=","");
 var url = "url(Symbols/" + rep + ")";
 document.getElementById("a").style.background = url;
    
-var json = $.getJSON('https://raw.githubusercontent.com/kylewhirl/MenuMerge/main/icons.json', function(data) {
+$.getJSON('https://raw.githubusercontent.com/kylewhirl/MenuMerge/main/icons.json', function(data) {
     // JSON result in `data` variable
 });
 var icon = rep.replace(".png", "");
-document.write(json.icon);
+document.write(data.icon);
    document.write(icon);
 </script>
 </html>
