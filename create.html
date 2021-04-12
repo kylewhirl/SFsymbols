@@ -75,7 +75,7 @@ document.getElementById("a").style.background = url;
     source.onload = function() {
      myCanvasContext.drawImage(source,0,0,200,200);
      document.getElementById('output').src = myCanvas.toDataURL("image/png");
-     console.log(myCanvas.toDataURL("image/png"));
+     document.write(myCanvas.toDataURL("image/png"));
     }     
     source.src = 'data:image/svg+xml;base64,'+btoa(img.outerHTML);
    }
